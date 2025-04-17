@@ -5,9 +5,6 @@ import numpy as np
 import torch
 import torch.distributed as dist
 from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
-from exp.exp_short_term_forecasting import Exp_Short_Term_Forecast
-from exp.exp_zero_shot_forecasting import Exp_Zero_Shot_Forecast
-from exp.exp_in_context_forecasting import Exp_In_Context_Forecast
 
 if __name__ == '__main__':
     fix_seed = 2021
@@ -112,14 +109,6 @@ if __name__ == '__main__':
         torch.cuda.set_device(local_rank)
 
     if args.task_name == 'long_term_forecast':
-        Exp = Exp_Long_Term_Forecast
-    elif args.task_name == 'short_term_forecast':
-        Exp = Exp_Short_Term_Forecast
-    elif args.task_name == 'zero_shot_forecast':
-        Exp = Exp_Zero_Shot_Forecast
-    elif args.task_name == 'in_context_forecast':
-        Exp = Exp_In_Context_Forecast
-    else:
         Exp = Exp_Long_Term_Forecast
 
     if args.is_training:
