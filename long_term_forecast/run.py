@@ -29,7 +29,7 @@ if __name__ == '__main__':
     parser.add_argument('--data', type=str, required=True, default='ETTh1', help='dataset type')
     parser.add_argument('--root_path', type=str, default='./dataset/ETT-small/', help='root path of the data file')
     parser.add_argument('--data_path', type=str, default='ETTh1.csv', help='data file')
-    parser.add_argument('--test_data_path', type=str, default='m4_hourly_dataset.tsf', help='test data file used in zero shot forecasting')
+    parser.add_argument('--test_data_path', type=str, default='', help='test data file used in zero shot forecasting')
     parser.add_argument('--checkpoints', type=str, default='./checkpoints/', help='location of model checkpoints')
     parser.add_argument('--drop_last',  action='store_true', default=False, help='drop last batch in data loader')
     parser.add_argument('--val_set_shuffle', action='store_false', default=True, help='shuffle validation set')
@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
     # model define
     parser.add_argument('--dropout', type=float, default=0.001, help='dropout')
-    parser.add_argument('--llm_ckp_dir', type=str, default='D:\\.cache\\huggingface\\hub\\models--GPT2\\snapshots\\Gpt2', help='llm checkpoints dir')
+    parser.add_argument('--llm_ckp_dir', type=str, default='', help='llm checkpoints dir')
     parser.add_argument('--mlp_hidden_dim', type=int, default=1024, help='mlp hidden dim')
     parser.add_argument('--mlp_hidden_layers', type=int, default=2, help='mlp hidden layers')
     parser.add_argument('--mlp_hidden_activation', type=str, default='swiglu', help='mlp activation')
